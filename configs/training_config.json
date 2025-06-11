@@ -1,0 +1,59 @@
+{
+    "model": {
+      "model_name_or_path": null,
+      "config_path": null,
+      "text_tokenizer_path": null,
+      "use_pretrained_csm": false,
+      "freeze_backbone": false,
+      "enable_gradient_checkpointing": true,
+      "use_vietnamese_features": false,
+      "model_size": "tiny"
+    },
+    "data": {
+      "train_file": "./vietnamese_csm_data/vietnamese_csm_train.jsonl",
+      "eval_file": "./vietnamese_csm_data/vietnamese_csm_val.jsonl",
+      "max_train_samples": 4,
+      "max_eval_samples": 2,
+      "amortization_ratio": 32,
+      "max_sequence_length": 512
+    },
+    "training": {
+      "output_dir": "./vietnamese_csm_checkpoints",
+      "num_train_epochs": 1,
+      "per_device_train_batch_size": 1,
+      "per_device_eval_batch_size": 1,
+      "gradient_accumulation_steps": 1,
+      "learning_rate": 1e-4,
+      "weight_decay": 0.01,
+      "warmup_steps": 1,
+      "max_grad_norm": 1.0,
+      "logging_steps": 1,
+      "save_steps": 2,
+      "eval_steps": 2,
+      "save_total_limit": 1,
+      "evaluation_strategy": "steps",
+      "eval_delay": 0,
+      "load_best_model_at_end": true,
+      "metric_for_best_model": "eval_loss",
+      "greater_is_better": false,
+      "dataloader_num_workers": 0,
+      "fp16": true,
+      "bf16": false,
+      "gradient_checkpointing": true,
+      "dataloader_pin_memory": false,
+      "seed": 42,
+      "report_to": "none",
+      "disable_tqdm": false,
+      "skip_memory_metrics": true,
+      "optim": "adamw_torch_fused",
+      "adam_beta1": 0.9,
+      "adam_beta2": 0.95,
+      "adam_epsilon": 1e-6
+    },
+    "logging": {
+      "use_wandb": false,
+      "wandb_project": "vietnamese-csm",
+      "wandb_run_name": "vietnamese-csm-memory-test",
+      "report_to": ["none"]
+    }
+  }

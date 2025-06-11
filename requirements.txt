@@ -1,0 +1,15 @@
+transformers
+datasets
+huggingface-hub
+accelerate
+wandb
+tensorboard
+torch
+underthesea
+pyvi
+librosa
+soundfile
+tokenizers
+scikit-learn
+matplotlib
+seaborn
